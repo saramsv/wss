@@ -40,7 +40,8 @@ FLAGS = flags.FLAGS
 ## DeepLab options
 # Settings for multi-GPUs/multi-replicas training.
 
-flags.DEFINE_integer('num_clones', 16, 'Number of clones to deploy.')
+##flags.DEFINE_integer('num_clones', 16, 'Number of clones to deploy.')
+flags.DEFINE_integer('num_clones', 1 , 'Number of clones to deploy.')
 
 flags.DEFINE_boolean('clone_on_cpu', False, 'Use CPUs to deploy clones.')
 
@@ -60,7 +61,8 @@ flags.DEFINE_integer('task', 0, 'The task ID.')
 
 # Settings for logging.
 
-flags.DEFINE_string('train_logdir', None,
+##flags.DEFINE_string('train_logdir', None,
+flags.DEFINE_string('train_logdir', 'logs',
                     'Where the checkpoint and logs are stored.')
 
 flags.DEFINE_integer('log_steps', 10,
@@ -218,7 +220,8 @@ flags.DEFINE_string('dataset', 'pascal_voc_seg',
 flags.DEFINE_string('train_split', 'train',
                     'Which split of the dataset to be used for training (seg)')
 
-flags.DEFINE_string('dataset_dir', None, 'Where the dataset reside.')
+#flags.DEFINE_string('dataset_dir', None, 'Where the dataset reside.')
+flags.DEFINE_string('dataset_dir', 'dataset', 'Where the dataset reside.')
 
 ## Pseudo_seg options
 flags.DEFINE_boolean('weakly', False, 'Using image-level labeled data or not')
